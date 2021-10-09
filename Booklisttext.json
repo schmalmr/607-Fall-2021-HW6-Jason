@@ -1,0 +1,28 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2580
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 ArialMT;}
+{\colortbl;\red255\green255\blue255;\red26\green26\blue26;\red255\green255\blue255;}
+{\*\expandedcolortbl;;\cssrgb\c13333\c13333\c13333;\cssrgb\c100000\c100000\c100000;}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs26 \cf2 \cb3 \expnd0\expndtw0\kerning0
+[\{"Title":"Odyssey","Author_1_LN":"Homer","Author_1_FN":"","Author_2_LN":"","Author_2_FN":"","Author_3_LN":"","Author_3_FN":"","Attribute_1":"Adventure","Attribute_2":"Heroic","Attribute_3":"Greek","Attribute_4":"Trust"\},\cb1 \
+\cb3 \{"Title":"Federalist Papers","Author_1_LN":"Hamilton","Author_1_FN":"Alexander","Author_2_LN":"Jay","Author_2_FN":"John","Author_3_LN":"Madison","Author_3_FN":"John","Attribute_1":"States Rights","Attribute_2":"Taxiation","Attribute_3":"Liberty","Attribute_4":"Union"\},\cb1 \
+\cb3 \{"Title":"Practical Cats","Author_1_LN":"","Author_1_FN":"","Author_2_LN":"","Author_2_FN":"","Author_3_LN":"","Author_3_FN":"","Attribute_1":"Society","Attribute_2":"Humor","Attribute_3":"Life","Attribute_4":""\}]\cb1 \
+\cb3 Jason as col format\cb1 \
+\cb3 \'a0\cb1 \
+\cb3 \{\cb1 \
+\cb3 \'a0 "Title":["Odyssey","Federalist Papers","Practical Cats"],\cb1 \
+\cb3 \'a0 "Author_1_LN":["Homer","Hamilton",""],\cb1 \
+\cb3 \'a0 "Author_1_FN":["","Alexander",""],\cb1 \
+\cb3 \'a0 "Author_2_LN":["","Jay",""],\cb1 \
+\cb3 \'a0 "Author_2_FN":["","John",""],\cb1 \
+\cb3 \'a0 "Author_3_LN":["","Madison",""],\cb1 \
+\cb3 \'a0 "Author_3_FN":["","John",""],\cb1 \
+\cb3 \'a0 "Attribute_1":["Adventure","States Rights","Society"],\cb1 \
+\cb3 \'a0 "Attribute_2":["Heroic","Taxiation","Humor"],\cb1 \
+\cb3 \'a0 "Attribute_3":["Greek","Liberty","Life"],\cb1 \
+\cb3 \'a0 "Attribute_4":["Trust","Union",""]\cb1 \
+\cb3 \}\cb1 \
+\cb3 \'a0}
