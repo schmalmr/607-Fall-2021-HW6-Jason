@@ -1,0 +1,151 @@
+---
+title: "607 Fall 2021 HW6 Json_HTML_XML"
+author: "Mark Schmalfeld"
+date: "10/10/2021"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Load library
+
+```{r}
+library(RCurl,curl)
+library (rvest)
+library(jsonlite, rjson)
+library(purrr)
+library(tidyverse)
+library(xml2)
+library(XML)
+library (methods)
+library(kableExtra)
+```
+
+
+HTML loaded in this case directly into R as HTML formated text to extract the table.
+
+Create book list in HTML
+
+```{r HTML book list}
+HTML_df <- as.data.frame(read_html("<html>
+<body>
+   
+ <h1>Books Catalog</h1>
+   <table style= “width:100%”>
+        <tr>
+            <th>Book Title</th>
+            <th>Author1</th>
+		   <th>Author2</th>
+            <th>Attribute1</th>
+            <th>Attribute2</th>
+            <th>Attribute3</th>
+            <th>Attribute4</th>
+         </tr>
+         <tr>
+	
+            <td>Odyssey</td>
+            <td>Homer</td>
+		   <td>NA</td>
+            <td>Adventure</td>
+            <td>Heroic</td>
+            <td>Greek</td>
+            <td>Trust</td>
+         </tr>
+         <tr>
+          
+            <td>The Federalist Papers</td>
+            <td>Alexander Hamilton</td>
+		   <td>John Jay</td>
+            <td>States Rights</td>
+            <td>Taxiation</td>
+            <td>Liberty</td>
+            <td>Union</td>
+         </tr>
+         <tr>
+           
+		   <td>Practical Cats</td>
+            <td>TS Eliot</td>
+		   <td>NA</td>
+            <td>Society</td>
+            <td>Humor</td>
+            <td>Life</td>
+            <td>Cats as humans</td>
+         </tr>
+      </table>
+
+   </body>
+</html>") %>% html_table(fill=TRUE))
+HTML_df
+
+strHTML<-str(HTML_df)
+
+```
+
+
+Download the Booklist XML file from the github and convert into a dataframe
+Evaluate for comparison using the str comparison.
+
+
+```{r XML load of booklist}
+
+download.file("https://raw.githubusercontent.com/schmalmr/607-Fall-2021-HW6-Jason/main/Booklist3.xml", destfile = "BooksList.xml")
+
+booksXML_File <- xmlParse("BooksList.xml")
+booksXML_df <- xmlToDataFrame(booksXML_File)
+booksXML_df
+
+strXML<-str(booksXML_df)
+```
+Load the JSON code for the book list into the system and convert to data frame.
+Data frame conversion was a wide data frame.
+
+Additonal tidying is needed to convert it to a tidy data frame.
+
+Create the string comparison file.
+
+
+```{r for Json load}
+#url<-"https://raw.githubusercontent.com/schmalmr/607-Fall-2021-HW6-Jason/main/Booklisttext.json"
+
+json <-
+'[
+  {"Book" : "Odyssey", "Author1" : "Homer", "Author2" : "NA" , "Attribute1" : "Adventure", "Attribute2" : "Heroic",  "Attribute3" : "Greek", "Attribute4" : "Trust"}, 
+  {"Book" : "The Federlist Papers", "Author1" : "Alexander Hamilton", "Author2" : "John Jay", "Attribute1" : "States Rights","Attribute2" : "Taxiation" , "Attribute3" : "Liberty", "Attribute4" : "Union"}, 
+{"Book" : "Practical Cats", "Author1" : "T.S. Eliot" , "Author2" : "NA", "Attribute1": "Society","Attribute2": "Humor", "Attribute3" : "Life", "Attribute4" : "Cats as Humans"} 
+]'
+Json_df <- fromJSON(json)
+Json_df
+df_Json <- as.data.frame(Json_df)
+df_Json
+
+Json_str <-str(df_Json)
+
+```
+
+Compare HTML and XML formats
+```{r}
+
+all_equal(HTML_df,booksXML_df)
+
+
+```
+
+Compare the HTML and the XML with the Jason table.  (already know they are not the same pending further work to gather into header columns instead of the wide format create)
+
+```{r}
+
+all.equal(df_Json,HTML_df)
+all.equal(df_Json,booksXML_df)
+
+```
+
+
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
