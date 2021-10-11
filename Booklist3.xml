@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<booklist>
+	<book id="001">
+		<Booktitle>Odyssey</Booktitle>
+		<Author1>Homer</Author1>
+		<Author2>na</Author2>
+		<Attribute1>Adventure</Attribute1>
+		<Attribute2>Heroic</Attribute2>
+		<Attribute3>Greek</Attribute3>
+		<Attribute4>Trust</Attribute4>
+	</book>
+	<book id="002">
+		<Booktitle>The Federalist Papers</Booktitle>
+		<Author1>Alexander Hamilton</Author1>
+		<Author2>John Jay</Author2>
+		<Attribute1>States Rights</Attribute1>
+		<Attribute2>Taxiation</Attribute2>
+		<Attribute3>Liberty</Attribute3>
+		<Attribute4>Union</Attribute4>
+	</book>
+	<book id="003">
+		<Booktitle>Practical Cats</Booktitle>
+		<Author1>TS Eliot</Author1>
+		<Author2>na</Author2>
+		<Attribute1>Society</Attribute1>
+		<Attribute2>Humor</Attribute2>
+		<Attribute3>Life</Attribute3>
+		<Attribute4>Cats as humans</Attribute4>
+	</book>	
+</booklist>
